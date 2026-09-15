@@ -3,638 +3,553 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>广东海泰达 - 水产养殖全周期方案</title>
-<meta name="description" content="广东海泰达水产有限公司 - 专业对虾养殖全周期方案">
+<title>广东海泰达 — 水产养殖投入品供应商</title>
+<meta name="description" content="广东海泰达水产有限公司 - 兽药经营许可,对虾养殖全周期投入品供应">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --primary: #1B365D;
-  --primary-light: #2E5A8E;
-  --accent: #E9B44C;
-  --bg: #F7F8FA;
-  --card: #FFFFFF;
-  --text: #1F2933;
-  --text-2: #5C6B7A;
-  --border: #E5E7EB;
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0B1220;--bg-2:#0F1729;--bg-3:#15203A;--line:#1F2B47;--text:#E6EAF2;--text-2:#9AA5BC;--text-3:#5C6A8A;--accent:#E9B44C;--accent-2:#4DA3FF;--green:#3DDC97}
+html,body{background:var(--bg);color:var(--text);font-family:"JetBrains Mono","SF Mono",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{max-width:100%;display:block}
+.nav{position:sticky;top:0;z-index:100;background:rgba(11,18,32,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1440px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:28px;height:40px;object-fit:contain}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-cn{font-size:15px;font-weight:600;letter-spacing:1px}
+.brand-en{font-size:10px;color:var(--text-3);letter-spacing:1.5px;margin-top:2px}
+.nav-tabs{display:flex;gap:0;height:64px}
+.nav-tab{padding:0 20px;display:flex;align-items:center;font-size:13px;color:var(--text-2);border-bottom:2px solid transparent;transition:all .15s;cursor:pointer;letter-spacing:.5px}
+.nav-tab:hover{color:var(--text)}
+.nav-tab.active{color:var(--accent);border-bottom-color:var(--accent);background:rgba(233,180,76,0.05)}
+.nav-meta{display:flex;align-items:center;gap:16px;font-size:11px;color:var(--text-3)}
+.nav-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
+.wrap{max-width:1440px;margin:0 auto;padding:32px}
+.page{display:none}
+.page.active{display:block}
+.marquee{background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:10px 16px;display:flex;align-items:center;gap:12px;font-size:12px;color:var(--text-2);margin-bottom:24px;overflow:hidden}
+.marquee-label{background:var(--accent);color:#000;padding:3px 8px;border-radius:3px;font-weight:600;font-size:10px;letter-spacing:1px;flex-shrink:0}
+.marquee-track{flex:1;overflow:hidden;white-space:nowrap}
+.marquee-track span{padding-right:48px}
+.marquee-track span::before{content:"▸ ";color:var(--accent)}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:0;background:var(--bg-2);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:24px}
+.hero-left{padding:40px 48px;border-right:1px solid var(--line)}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--accent);letter-spacing:2px;margin-bottom:16px}
+.hero-tag::before{content:"";width:24px;height:1px;background:var(--accent)}
+.hero h1{font-size:48px;line-height:1.1;font-weight:700;letter-spacing:-1px;margin-bottom:20px}
+.hero h1 .accent{color:var(--accent)}
+.hero h1 .small{font-size:18px;color:var(--text-2);font-weight:400;display:block;margin-top:8px;letter-spacing:0}
+.hero-desc{font-size:14px;color:var(--text-2);margin-bottom:28px;max-width:520px;line-height:1.7}
+.hero-actions{display:flex;gap:12px}
+.btn{padding:12px 24px;border-radius:4px;font-size:13px;font-weight:500;letter-spacing:.5px;transition:all .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--accent);color:#0B1220}
+.btn-primary:hover{background:#F5C46B}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-right{padding:32px;background:var(--bg-3);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{border-left:2px solid var(--accent);padding-left:12px}
+.stat-num{font-size:28px;font-weight:700;color:var(--text);line-height:1}
+.stat-num .unit{font-size:14px;color:var(--text-3);margin-left:4px}
+.stat-label{font-size:10px;color:var(--text-3);margin-top:6px;letter-spacing:1px;text-transform:uppercase}
+.hero-info{display:flex;flex-direction:column;gap:0;font-size:12px;color:var(--text-2);border-top:1px solid var(--line);padding-top:16px}
+.hero-info div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line)}
+.hero-info div:last-child{border-bottom:none}
+.hero-info div span:last-child{color:var(--text)}
+.sec{margin-bottom:32px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.sec-title{font-size:20px;font-weight:600;display:flex;align-items:baseline;gap:12px}
+.sec-title .en{font-size:11px;color:var(--text-3);letter-spacing:2px;font-weight:400}
+.sec-meta{font-size:11px;color:var(--text-3);display:flex;gap:16px;align-items:center}
+.sec-meta .live{color:var(--green)}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-card{background:var(--bg-2);border:1px solid var(--line);padding:20px;border-radius:6px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden}
+.cat-card:hover{border-color:var(--accent);background:var(--bg-3);transform:translateY(-2px)}
+.cat-num{font-size:10px;color:var(--text-3);letter-spacing:1px;margin-bottom:12px;font-family:"JetBrains Mono",monospace}
+.cat-name{font-size:15px;font-weight:600;margin-bottom:6px}
+.cat-desc{font-size:11px;color:var(--text-3);margin-bottom:14px;line-height:1.5}
+.cat-tags{display:flex;flex-wrap:wrap;gap:4px}
+.cat-tag{font-size:10px;padding:2px 6px;background:var(--bg);border:1px solid var(--line);border-radius:3px;color:var(--text-2)}
+.cat-count{position:absolute;top:12px;right:16px;font-size:18px;color:var(--accent);font-weight:700;font-family:"JetBrains Mono",monospace}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.prod-card{background:var(--bg-2);border:1px solid var(--line);border-radius:6px;overflow:hidden;cursor:pointer;transition:all .15s;display:flex;flex-direction:column}
+.prod-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.prod-img{aspect-ratio:1/1;background:var(--bg-3);position:relative;overflow:hidden}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-img .badge{position:absolute;top:6px;left:6px;background:rgba(11,18,32,0.85);color:var(--accent);font-size:9px;padding:2px 6px;border-radius:2px;letter-spacing:1px;backdrop-filter:blur(4px)}
+.prod-body{padding:10px 12px;flex:1;display:flex;flex-direction:column}
+.prod-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prod-cat{font-size:10px;color:var(--text-3);margin-bottom:6px;font-family:"JetBrains Mono",monospace}
+.prod-spec{font-size:10px;color:var(--text-2);margin-top:auto;padding-top:6px;border-top:1px dashed var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.data-table{width:100%;border-collapse:collapse;font-size:12px}
+.data-table th{text-align:left;padding:10px 12px;background:var(--bg-3);color:var(--text-3);font-weight:500;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid var(--line)}
+.data-table td{padding:12px;border-bottom:1px solid var(--line);color:var(--text)}
+.data-table tr:hover td{background:var(--bg-2)}
+.data-table .num{color:var(--accent);font-weight:600;font-family:"JetBrains Mono",monospace}
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+.panel{background:var(--bg-2);border:1px solid var(--line);border-radius:6px;padding:24px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.panel-title{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-title::before{content:"";width:3px;height:14px;background:var(--accent)}
+.panel-id{font-size:10px;color:var(--text-3);font-family:"JetBrains Mono",monospace}
+.about-text{font-size:13px;color:var(--text-2);line-height:1.8;margin-bottom:12px}
+.about-text strong{color:var(--text);font-weight:600}
+.kv{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.kv div{padding:14px 16px;font-size:12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kv div:nth-child(2n){border-right:none}
+.kv div:nth-last-child(-n+2){border-bottom:none}
+.kv .k{color:var(--text-3);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.kv .v{color:var(--text);font-size:14px;font-weight:500}
+.license-box{text-align:center}
+.license-box img{max-width:100%;border-radius:4px;border:1px solid var(--line)}
+.license-box .lic-meta{margin-top:12px;font-size:11px;color:var(--text-3);display:flex;justify-content:space-between;padding-top:12px;border-top:1px dashed var(--line)}
+.timeline{position:relative;padding-left:24px}
+.timeline::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:1px;background:var(--line)}
+.tl-item{position:relative;padding-bottom:18px}
+.tl-item::before{content:"";position:absolute;left:-21px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tl-year{font-size:11px;color:var(--accent);font-weight:600;margin-bottom:4px;letter-spacing:1px;font-family:"JetBrains Mono",monospace}
+.tl-text{font-size:12px;color:var(--text-2);line-height:1.6}
+.footer{border-top:1px solid var(--line);padding:32px 0;margin-top:48px}
+.footer-in{max-width:1440px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.f-col h4{font-size:11px;color:var(--text-3);letter-spacing:2px;margin-bottom:14px;text-transform:uppercase}
+.f-col a,.f-col li{display:block;font-size:12px;color:var(--text-2);padding:4px 0;list-style:none}
+.f-col a:hover{color:var(--accent)}
+.f-brand{font-size:13px;font-weight:600;margin-bottom:8px}
+.f-desc{font-size:11px;color:var(--text-3);line-height:1.7}
+.copyright{border-top:1px solid var(--line);padding:16px 32px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text-3);max-width:1440px;margin:24px auto 0}
+@media(max-width:1100px){
+.cat-grid{grid-template-columns:repeat(3,1fr)}
+.prod-grid{grid-template-columns:repeat(3,1fr)}
+.hero{grid-template-columns:1fr}
+.hero-left{border-right:none;border-bottom:1px solid var(--line)}
+.about-grid{grid-template-columns:1fr}
+.footer-in{grid-template-columns:1fr 1fr}
 }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-/* 顶部导航 */
-.navbar {
-  background: var(--primary);
-  color: white;
-  padding: 18px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
-.brand-logo {
-  width: 36px;
-  height: 50px;
-  object-fit: contain;
-}
-.brand-name {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.brand-en {
-  font-size: 11px;
-  opacity: 0.7;
-  letter-spacing: 0.5px;
-}
-.tabs {
-  display: flex;
-  gap: 8px;
-}
-.tab {
-  background: transparent;
-  border: none;
-  color: rgba(255,255,255,0.7);
-  padding: 10px 24px;
-  font-size: 15px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-.tab:hover { color: white; background: rgba(255,255,255,0.1); }
-.tab.active {
-  color: var(--primary);
-  background: white;
-  font-weight: 600;
-}
-.tab-mobile {
-  display: none;
-  background: var(--accent);
-  color: var(--primary);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-/* 主体容器 */
-.container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
-.page { display: none; }
-.page.active { display: block; animation: fadeIn 0.4s; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-
-/* 首页 Hero */
-.hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: white;
-  border-radius: 16px;
-  padding: 80px 48px;
-  margin-bottom: 32px;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%; right: -10%;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(233,180,76,0.15), transparent 70%);
-}
-.hero-tag {
-  display: inline-block;
-  background: rgba(233,180,76,0.2);
-  color: var(--accent);
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-.hero h1 {
-  font-size: 44px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  letter-spacing: 2px;
-}
-.hero p {
-  font-size: 18px;
-  opacity: 0.9;
-  margin-bottom: 28px;
-  max-width: 640px;
-}
-.hero-cta {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--primary);
-  padding: 12px 32px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-/* 卡片网格 */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-bottom: 32px;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 28px 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  transition: all 0.25s;
-  cursor: pointer;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-}
-.card-icon {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: white;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-bottom: 16px;
-}
-.card h3 { font-size: 18px; margin-bottom: 8px; color: var(--primary); }
-.card p { color: var(--text-2); font-size: 14px; }
-.section-title {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--primary);
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.section-title::after {
-  content: '';
-  flex: 1;
-  height: 2px;
-  background: linear-gradient(90deg, var(--border), transparent);
-}
-
-/* 分类筛选 */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 28px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-.filter-btn {
-  background: white;
-  border: 1px solid var(--border);
-  color: var(--text-2);
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: inherit;
-}
-.filter-btn:hover { border-color: var(--primary); color: var(--primary); }
-.filter-btn.active {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
-
-/* 产品网格 */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-.product-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  transition: all 0.25s;
-  display: flex;
-  flex-direction: column;
-}
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-}
-.product-img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  background: #F1F3F5;
-}
-.product-body {
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.product-name {
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 8px;
-}
-.product-tag {
-  display: inline-block;
-  background: rgba(27,54,93,0.08);
-  color: var(--primary);
-  padding: 2px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  margin-bottom: 12px;
-  align-self: flex-start;
-}
-.product-info {
-  font-size: 13px;
-  color: var(--text-2);
-  margin-bottom: 6px;
-}
-.product-info strong { color: var(--text); margin-right: 4px; }
-.product-spec {
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px dashed var(--border);
-  font-size: 12px;
-  color: var(--text-2);
-}
-.empty {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--text-2);
-}
-
-/* 企业资质 */
-.about-section {
-  background: white;
-  border-radius: 12px;
-  padding: 40px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.about-section h2 {
-  font-size: 22px;
-  color: var(--primary);
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--accent);
-  display: inline-block;
-}
-.about-section p {
-  color: var(--text-2);
-  font-size: 15px;
-  margin-bottom: 12px;
-  line-height: 1.8;
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-}
-.about-item {
-  background: #F7F8FA;
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 3px solid var(--primary);
-}
-.about-item h4 {
-  font-size: 14px;
-  color: var(--text-2);
-  margin-bottom: 6px;
-}
-.about-item p { color: var(--primary); font-size: 17px; font-weight: 600; margin: 0; }
-.license-card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  text-align: center;
-}
-.license-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.license-card h3 {
-  margin-top: 16px;
-  color: var(--primary);
-  font-size: 16px;
-}
-.license-card p {
-  color: var(--text-2);
-  font-size: 13px;
-  margin-top: 4px;
-}
-
-/* Footer */
-.footer {
-  background: var(--primary);
-  color: rgba(255,255,255,0.7);
-  text-align: center;
-  padding: 32px 24px;
-  font-size: 14px;
-  margin-top: 60px;
-}
-.footer a { color: var(--accent); text-decoration: none; }
-
-/* 响应式 */
-@media (max-width: 768px) {
-  .nav-container { flex-wrap: wrap; }
-  .tabs { width: 100%; justify-content: space-around; margin-top: 12px; }
-  .tab { padding: 8px 12px; font-size: 14px; flex: 1; text-align: center; }
-  .hero { padding: 48px 28px; }
-  .hero h1 { font-size: 30px; }
-  .hero p { font-size: 15px; }
-  .container { padding: 24px 16px; }
-  .about-section { padding: 24px 20px; }
-  .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
-  .product-body { padding: 14px; }
-  .product-name { font-size: 14px; }
+@media(max-width:640px){
+.wrap{padding:16px}
+.nav-in{padding:0 16px;height:56px}
+.nav-tabs{height:56px}
+.nav-tab{padding:0 12px;font-size:12px}
+.brand-en{display:none}
+.hero h1{font-size:32px}
+.cat-grid,.prod-grid{grid-template-columns:repeat(2,1fr)}
+.kv{grid-template-columns:1fr}
+.hero-left{padding:28px 24px}
+.hero-right{padding:24px}
 }
 </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
     <div class="brand">
-      <img class="brand-logo" src="images/icons/logo.png" alt="海泰达">
-      <div>
-        <div class="brand-name">广东海泰达</div>
-        <div class="brand-en">GUANGDONG HAITAIDA</div>
+      <img class="brand-logo" src="images/icons/logo.png" alt="">
+      <div class="brand-text">
+        <div class="brand-cn">广东海泰达</div>
+        <div class="brand-en">HAITAIDA / AQUACULTURE</div>
       </div>
     </div>
-    <div class="tabs">
-      <button class="tab active" data-page="home">首页</button>
-      <button class="tab" data-page="product">产品中心</button>
-      <button class="tab" data-page="about">企业资质</button>
+    <div class="nav-tabs">
+      <button class="nav-tab active" data-page="home">首页 <span class="tab-en">/HOME</span></button>
+      <button class="nav-tab" data-page="product">产品中心 <span class="tab-en">/PRODUCTS</span></button>
+      <button class="nav-tab" data-page="about">企业资质 <span class="tab-en">/ABOUT</span></button>
     </div>
-    <button class="tab-mobile" onclick="document.querySelector('.tabs .tab:nth-child(2)').click()">浏览产品 →</button>
+    <div class="nav-meta">
+      <span class="dot"></span>
+      <span>营业中 · BUSINESS HOURS</span>
+    </div>
   </div>
 </nav>
 
-<div class="container">
+<div class="wrap">
 
-  <!-- 首页 -->
-  <div class="page active" id="page-home">
-    <div class="hero">
-      <span class="hero-tag">水产养殖全周期方案</span>
-      <h1>对虾养殖专家</h1>
-      <p>专业从事对虾养殖技术研究、水质调控、病害防治与优质投入品供应,助力养殖户增产增收。</p>
-      <button class="hero-cta" onclick="switchPage('product')">查看产品中心</button>
-    </div>
+<!-- HOME -->
+<div class="page active" id="page-home">
 
-    <h2 class="section-title">核心业务</h2>
-    <div class="cards">
-      <div class="card" onclick="switchPage('product')">
-        <div class="card-icon">🦐</div>
-        <h3>优质投入品</h3>
-        <p>涵盖消毒、营养、水质调控、底质改良等全系列产品</p>
-      </div>
-      <div class="card" onclick="switchPage('about')">
-        <div class="card-icon">📋</div>
-        <h3>资质齐全</h3>
-        <p>兽药经营许可证、营业执照等经营资质完备</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">💧</div>
-        <h3>水质调控</h3>
-        <p>EM菌、肥水膏、调水产品,稳定养殖水环境</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🩺</div>
-        <h3>病害防治</h3>
-        <p>提供养殖现场诊断与综合防治方案</p>
-      </div>
-    </div>
-
-    <h2 class="section-title">热门产品</h2>
-    <div class="product-grid" id="featured-products"></div>
-  </div>
-
-  <!-- 产品页 -->
-  <div class="page" id="page-product">
-    <h2 class="section-title">产品中心</h2>
-    <div class="filter-bar" id="filter-bar"></div>
-    <div class="product-grid" id="product-grid"></div>
-  </div>
-
-  <!-- 企业资质 -->
-  <div class="page" id="page-about">
-    <h2 class="section-title">企业资质</h2>
-
-    <div class="about-section">
-      <h2>公司简介</h2>
-      <p>广东海泰达水产有限公司是一家专业从事水产养殖技术服务和优质投入品供应的企业,业务覆盖对虾养殖全周期所需的各类产品与技术方案。</p>
-      <p>公司主营产品包括<strong>水体消毒剂、水质改良剂、抗应激营养品、抗菌治病药品、底质改良剂</strong>等多个系列,产品配方科学、品质稳定,在华南、华东对虾主养区域拥有广泛的客户基础。</p>
-      <p>我们坚持"产品+服务"双轮驱动,为养殖户提供从放苗、清塘、水质调控到病害防治的全流程技术支持。</p>
-    </div>
-
-    <div class="about-section">
-      <h2>联系方式</h2>
-      <div class="about-grid">
-        <div class="about-item">
-          <h4>经营范围</h4>
-          <p>兽药 / 水产投入品</p>
-        </div>
-        <div class="about-item">
-          <h4>服务区域</h4>
-          <p>华南 · 华东</p>
-        </div>
-        <div class="about-item">
-          <h4>主营品种</h4>
-          <p>南美白对虾</p>
-        </div>
-        <div class="about-item">
-          <h4>合作模式</h4>
-          <p>经销 · 直供</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="license-card">
-      <h3 style="margin-bottom:16px;">兽药经营许可证</h3>
-      <img src="images/license/license.png" alt="兽药经营许可证">
-      <h3>兽药经营许可</h3>
-      <p>合规经营 · 品质保障</p>
+  <div class="marquee">
+    <span class="marquee-label">LATEST</span>
+    <div class="marquee-track">
+      <span>2026 春季南美白对虾养殖技术方案发布</span>
+      <span>全新蓝裸甲藻净上市,高效杀灭有害藻</span>
+      <span>多肽EM菌 5kg/瓶大包装优惠供应中</span>
+      <span>兽药经营许可证在营,合规经营</span>
     </div>
   </div>
+
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">水 产 养 殖 全 周 期 方 案</div>
+      <h1>
+        对虾养殖<br>
+        <span class="accent">投入品专家</span>
+        <span class="small">// 32 SKU · 7 大类 · 覆盖养殖全流程</span>
+      </h1>
+      <p class="hero-desc">
+        广东海泰达专注对虾养殖投入品研发与供应,产品涵盖水体消毒、底质改良、水质调控、抗应激、营养促生长等全周期,配方稳定、品质可控,为华南华东数千养殖户提供可靠的产品方案。
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="switchPage('product')">查看产品矩阵 →</button>
+        <button class="btn btn-ghost" onclick="switchPage('about')">企业资质</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">32<span class="unit">SKU</span></div>
+          <div class="stat-label">PRODUCTS</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">7<span class="unit">类</span></div>
+          <div class="stat-label">CATEGORIES</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">11<span class="unit">图</span></div>
+          <div class="stat-label">VISUAL</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">06<span class="unit">证</span></div>
+          <div class="stat-label">LICENSE</div>
+        </div>
+      </div>
+      <div class="hero-info">
+        <div><span>主营品类</span><span>兽药 · 水产投入品</span></div>
+        <div><span>服务区域</span><span>华南 · 华东主养区</span></div>
+        <div><span>合作模式</span><span>经销 · 直供 · 塘头</span></div>
+        <div><span>响应时效</span><span>24h 内技术对接</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head">
+      <h2 class="sec-title">分类索引 <span class="en">/ CATEGORIES</span></h2>
+      <div class="sec-meta"><span class="live">●</span><span>7 个产品大类 · 点击进入</span></div>
+    </div>
+    <div class="cat-grid" id="home-cat-grid"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <h2 class="sec-title">热门产品 <span class="en">/ FEATURED</span></h2>
+      <div class="sec-meta"><span>已上传图片的产品</span><button class="btn btn-ghost" style="padding:4px 12px;font-size:11px" onclick="switchPage('product')">查看全部 →</button></div>
+    </div>
+    <div class="prod-grid" id="featured"></div>
+  </section>
 
 </div>
 
-<div class="footer">
-  © 2026 广东海泰达水产有限公司 ·
-  <a href="preview.html">小程序预览</a> ·
-  <a href="https://github.com/engeral/Guangdong-haitaida">源码</a>
+<!-- PRODUCT -->
+<div class="page" id="page-product">
+
+  <div class="marquee">
+    <span class="marquee-label">FILTER</span>
+    <div class="marquee-track"><span>点击下方分类筛选 · 或使用搜索定位具体产品</span></div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head">
+      <h2 class="sec-title">产品矩阵 <span class="en">/ PRODUCT MATRIX</span></h2>
+      <div class="sec-meta">
+        <span id="prod-count">32</span><span> SKU</span>
+        <span style="color:var(--accent)">|</span>
+        <span id="prod-cat-name">全部</span>
+        <span style="color:var(--accent)">|</span>
+        <span class="live">●</span><span>在售</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;padding:12px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px">
+      <button class="filter-btn active" data-cat="all">全部 / ALL</button>
+      <button class="filter-btn" data-cat="disinfect">水体消毒</button>
+      <button class="filter-btn" data-cat="water">水质调控</button>
+      <button class="filter-btn" data-cat="antistress">抗应激</button>
+      <button class="filter-btn" data-cat="detox">解毒调水</button>
+      <button class="filter-btn" data-cat="antibiotic">抗菌治病</button>
+      <button class="filter-btn" data-cat="nutrition">营养促生长</button>
+      <button class="filter-btn" data-cat="other">其他</button>
+    </div>
+    <div class="prod-grid" id="product-grid"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <h2 class="sec-title">规格总表 <span class="en">/ SPECIFICATION TABLE</span></h2>
+      <div class="sec-meta"><span>含全部 32 SKU · 按分类聚合</span></div>
+    </div>
+    <div class="panel" style="padding:0;overflow:hidden">
+      <table class="data-table">
+        <thead>
+          <tr><th style="width:60px">#</th><th>产品名称</th><th>分类</th><th>主要成分</th><th>规格</th></tr>
+        </thead>
+        <tbody id="spec-table"></tbody>
+      </table>
+    </div>
+  </section>
+
 </div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+
+  <section class="sec">
+    <div class="sec-head">
+      <h2 class="sec-title">企业档案 <span class="en">/ COMPANY PROFILE</span></h2>
+      <div class="sec-meta"><span class="live">●</span><span>营业状态正常</span></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <div class="panel" style="margin-bottom:16px">
+          <div class="panel-head">
+            <div class="panel-title">公司简介</div>
+            <div class="panel-id">SEC.01</div>
+          </div>
+          <p class="about-text">
+            <strong>广东海泰达水产有限公司</strong>是一家专业从事水产养殖投入品研发与供应的企业,主营业务覆盖对虾养殖全周期所需的各类产品与技术方案。
+          </p>
+          <p class="about-text">
+            公司主营产品包括<strong>水体消毒剂、水质改良剂、抗应激营养品、抗菌药品、底质改良剂</strong>等 7 大类 32 个 SKU,在广东、广西、福建、江苏等对虾主养区域拥有广泛的客户基础。
+          </p>
+          <p class="about-text">
+            公司坚持"产品+服务"双轮驱动,为养殖户提供从放苗、清塘、水质调控到病害防治的全流程技术支持,响应时效 24 小时内。
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">经营数据</div>
+            <div class="panel-id">SEC.02</div>
+          </div>
+          <div class="kv">
+            <div><div class="k">注册品类</div><div class="v">兽药经营</div></div>
+            <div><div class="k">主营品种</div><div class="v">南美白对虾</div></div>
+            <div><div class="k">SKU 总数</div><div class="v">32 个</div></div>
+            <div><div class="k">分类数</div><div class="v">7 大类</div></div>
+            <div><div class="k">服务区域</div><div class="v">华南 / 华东</div></div>
+            <div><div class="k">合作模式</div><div class="v">经销 · 直供</div></div>
+            <div><div class="k">响应时效</div><div class="v">24h 内</div></div>
+            <div><div class="k">供应状态</div><div class="v" style="color:var(--green)">● 在售</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel license-box" style="margin-bottom:16px">
+          <div class="panel-head" style="text-align:left">
+            <div class="panel-title">兽药经营许可证</div>
+            <div class="panel-id">LIC.001</div>
+          </div>
+          <img src="images/license/license.png" alt="兽药经营许可证">
+          <div class="lic-meta">
+            <span>兽药经营</span>
+            <span style="color:var(--accent)">● 资质完备</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">发展历程</div>
+            <div class="panel-id">SEC.03</div>
+          </div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-year">2026</div>
+              <div class="tl-text">建立线上产品矩阵,32 SKU 全周期覆盖</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2024</div>
+              <div class="tl-text">拓展华东市场,福建、江苏客户群建立</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2022</div>
+              <div class="tl-text">取得兽药经营许可证,合规经营</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-year">2020</div>
+              <div class="tl-text">公司成立,聚焦对虾养殖投入品</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="f-col">
+      <div class="f-brand">广东海泰达水产有限公司</div>
+      <div class="f-desc">专注对虾养殖全周期投入品供应,产品+服务双轮驱动,与养殖户共赢。</div>
+    </div>
+    <div class="f-col">
+      <h4>产品</h4>
+      <a onclick="switchPage('product')">水体消毒</a>
+      <a onclick="switchPage('product')">水质调控</a>
+      <a onclick="switchPage('product')">抗应激营养</a>
+      <a onclick="switchPage('product')">抗菌治病</a>
+    </div>
+    <div class="f-col">
+      <h4>分类</h4>
+      <a onclick="switchPage('product')">解毒调水</a>
+      <a onclick="switchPage('product')">营养促生长</a>
+      <a onclick="switchPage('product')">底质改良</a>
+      <a onclick="switchPage('product')">其他投入品</a>
+    </div>
+    <div class="f-col">
+      <h4>关于</h4>
+      <a onclick="switchPage('about')">公司简介</a>
+      <a onclick="switchPage('about')">经营资质</a>
+      <a href="preview.html">小程序预览</a>
+      <a href="https://github.com/engeral/Guangdong-haitaida">GitHub 源码</a>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2026 GUANGDONG HAITAIDA AQUACULTURE CO., LTD.</span>
+    <span style="font-family:'JetBrains Mono',monospace">v.2026.09 · BUILD 15</span>
+  </div>
+</footer>
 
 <script>
-// ===== 数据(从 utils/data.js 同步过来) =====
-const CATEGORIES = [
-  { id: 'all', name: '全部产品' },
-  { id: 'disinfect', name: '水体消毒' },
-  { id: 'water', name: '水质调控' },
-  { id: 'antistress', name: '抗应激' },
-  { id: 'detox', name: '解毒调水' },
-  { id: 'antibiotic', name: '抗菌治病' },
-  { id: 'nutrition', name: '营养促生长' },
-  { id: 'other', name: '其他' }
-];
-
-const CATEGORY_NAME = {
-  disinfect: '水体消毒', water: '水质调控', antistress: '抗应激',
-  detox: '解毒调水', antibiotic: '抗菌治病', nutrition: '营养促生长', other: '其他'
+// ============ DATA ============
+const CAT = {
+  disinfect:  {name:'水体消毒',     en:'DISINFECT',   desc:'碘制剂、醛类、季铵盐等', tags:['碘','醛','季铵盐']},
+  water:      {name:'水质调控',     en:'WATER',       desc:'EM菌、肥水、培藻、净水', tags:['EM菌','藻种','碳源']},
+  antistress: {name:'抗应激',       en:'ANTI-STRESS', desc:'VC、多维、酶制剂',         tags:['VC','多维','酶']},
+  detox:      {name:'解毒调水',     en:'DETOX',       desc:'有机酸、增氧、底净',       tags:['有机酸','增氧','底改']},
+  antibiotic: {name:'抗菌治病',     en:'ANTIBIOTIC',  desc:'喹诺酮、青霉素、氨基糖苷', tags:['恩诺','新霉素','阿莫']},
+  nutrition:  {name:'营养促生长',   en:'NUTRITION',   desc:'矿物元素、蛋白多肽',       tags:['矿物','蛋白','氨基酸']},
+  other:      {name:'其他投入品',   en:'OTHER',       desc:'辅助类、功能性产品',       tags:['辅助','功能']}
 };
 
 const PRODUCTS = [
-  { id: 'p001', name: '蛋氨酸碘溶液', category: 'disinfect', ingredient: '蛋氨酸碘 4.5-6.0%', scene: '水体消毒、疫病期消毒、清塘消毒', spec: '500g/瓶 × 20瓶/箱', image: null },
-  { id: 'p002', name: '复合碘溶液（水产用）', category: 'disinfect', ingredient: '碘 1.8-2.0%、磷酸 16-18%', scene: '细菌性、病毒性疾病防治', spec: '500g/瓶 × 20瓶/箱', image: null },
-  { id: 'p003', name: '胜典', category: 'other', ingredient: '碘、磷酸', scene: '辅助消毒', spec: '1000g/瓶 × 15瓶/箱', image: null },
-  { id: 'p004', name: '超典', category: 'other', ingredient: '碘、磷酸', scene: '辅助消毒', spec: '1000g/瓶 × 15瓶/箱', image: null },
-  { id: 'p005', name: '聚维酮碘溶液（水产用）', category: 'disinfect', ingredient: '聚维酮碘 10%', scene: '弧菌、嗜水气单胞菌等细菌病', spec: '500g/瓶 × 20瓶/箱', image: null },
-  { id: 'p006', name: '苯扎溴铵溶液（水产用）', category: 'disinfect', ingredient: '苯扎溴铵 20%', scene: '出血、烂鳃、肠炎等细菌病', spec: '500g/瓶 × 20瓶/箱', image: null },
-  { id: 'p007', name: '戊二醛溶液', category: 'disinfect', ingredient: '戊二醛 20%', scene: '出血、烂鳃、肠炎等细菌病', spec: '500g/瓶 × 20瓶/箱', image: null },
-  { id: 'p008', name: '甲醛溶液', category: 'disinfect', ingredient: '甲醛', scene: '水体杀虫、杀灭细菌真菌', spec: '25kg/桶', image: null },
-  { id: 'p009', name: '恩诺沙星粉（水产用）', category: 'antibiotic', ingredient: '恩诺沙星 10%', scene: '出血性败血症、烂鳃、肠炎', spec: '100g/包 × 50包/箱', image: null },
-  { id: 'p010', name: '硫酸新霉素粉（水产用）', category: 'antibiotic', ingredient: '硫酸新霉素', scene: '肠道疾病、气单胞菌感染', spec: '200g/包 × 50包/箱', image: null },
-  { id: 'p011', name: '亚硫酸氢钠钾萘醌粉', category: 'antibiotic', ingredient: 'K3', scene: '鱼类出血、败血症', spec: '200g/包 × 50包/箱', image: null },
-  { id: 'p012', name: '阿莫西林可溶性粉', category: 'antibiotic', ingredient: '阿莫西林', scene: '细菌性病、链球菌感染', spec: '100g/包 × 100包/箱', image: null },
-  { id: 'p013', name: '超能多维', category: 'antistress', ingredient: '复合维生素、芽孢杆菌', scene: '转塘、高温低温、水质恶化应激', spec: '1000g/包 × 10包/桶', image: 'images/products/chaonengduowei.jpg' },
-  { id: 'p014', name: '金维他', category: 'antistress', ingredient: '复合维生素、酶制剂、乳酸菌', scene: '日常抗应激、补充营养', spec: '500g/包 × 20包/桶', image: 'images/products/jinweita.jpg' },
-  { id: 'p015', name: '肝泰乐', category: 'detox', ingredient: '胆汁酸 30%、牛磺酸 10%', scene: '保肝利胆、排毒', spec: '100g/包 × 30包/桶', image: 'images/products/gantaile.jpg' },
-  { id: 'p016', name: '矿源速补', category: 'nutrition', ingredient: '磷酸二氢钙、维生素D3、氨基酸', scene: '日常营养补充、促生长', spec: '1000g/包 × 10包/箱', image: 'images/products/kuangyuansubu.jpg' },
-  { id: 'p017', name: '多肽EM菌', category: 'water', ingredient: 'EM菌复合菌种', scene: '肥水、调水、降亚硝酸盐', spec: '5kg/瓶 × 4瓶/箱', image: 'images/products/duotaiem.png' },
-  { id: 'p018', name: '爽水王', category: 'other', ingredient: 'EM菌复合菌种', scene: '辅助调水', spec: '5kg/瓶 × 4瓶/箱', image: null },
-  { id: 'p019', name: '解毒碧水爽', category: 'detox', ingredient: '有机酸', scene: '水体解毒、络合重金属', spec: '5kg × 4瓶/箱', image: null },
-  { id: 'p020', name: '解毒应激VC', category: 'antistress', ingredient: '抗坏血酸、牛磺酸', scene: '各类应激场景', spec: '500g/包 × 20包/桶', image: 'images/products/jieduyingjiVC.jpg' },
-  { id: 'p021', name: '高稳C', category: 'antistress', ingredient: '维生素C', scene: '抗应激、解毒', spec: '500g/包 × 20包/桶', image: 'images/products/gaowenC.jpg' },
-  { id: 'p022', name: '水蛛福星', category: 'nutrition', ingredient: '育蛛蛋白多肽、菌酶、氨基酸', scene: '营养补充、促生长', spec: '5kg/瓶 × 4瓶/箱', image: 'images/products/shuizhufuxing.png' },
-  { id: 'p023', name: '全能肥水膏', category: 'water', ingredient: '氨基酸、育蛛蛋白、黄腐酸、藻种', scene: '肥水、培藻、调水色', spec: '10kg/桶', image: null },
-  { id: 'p024', name: '全能肥蛛膏', category: 'water', ingredient: '氨基酸、育蛛蛋白、黄腐酸、藻种', scene: '肥水、培蛛', spec: '10kg/桶', image: null },
-  { id: 'p025', name: '粒粒高氧片', category: 'detox', ingredient: '过碳酸钠', scene: '水体快速增氧、氧化底质', spec: '1kg × 10包/箱', image: null },
-  { id: 'p026', name: '强力浊水清', category: 'detox', ingredient: '聚丙烯酰胺、聚合氯化铝', scene: '快速净水、抗应激', spec: '1000g/包 × 10包/箱', image: null },
-  { id: 'p027', name: '解毒诱食净水王', category: 'detox', ingredient: '聚丙烯酰胺、聚合氯化铝', scene: '解毒、净水、诱食', spec: '1000g/包 × 10包/箱', image: null },
-  { id: 'p028', name: '活水宝', category: 'water', ingredient: '碳源、氮源、促生长因子', scene: '促进藻类生长、净化水质', spec: '10kg/桶', image: null },
-  { id: 'p029', name: '蓝裸甲藻净', category: 'water', ingredient: '杀藻剂', scene: '杀灭蓝藻、裸藻、甲藻等', spec: '500g/瓶 × 20瓶/箱', image: 'images/products/lanluojiazaojing.jpg' },
-  { id: 'p030', name: '红菌亚硝净', category: 'water', ingredient: '亚硝酸盐转化菌', scene: '转化亚硝酸盐、分解残饵', spec: '500g/瓶 × 20瓶/箱', image: null },
-  { id: 'p031', name: '超强底净', category: 'disinfect', ingredient: '底质改良剂', scene: '清除黑臭底、改善底质', spec: '1000g × 10包/桶', image: 'images/products/chaoqiangdaigai.jpg' },
-  { id: 'p032', name: '铁牛', category: 'disinfect', ingredient: '氧化剂', scene: '氧化氨氮、亚盐、硫化氢', spec: '1000g × 10包/桶', image: null }
+  {id:'p001',name:'蛋氨酸碘溶液',cat:'disinfect',ing:'蛋氨酸碘 4.5-6.0%',scene:'水体消毒、疫病期消毒、清塘',spec:'500g/瓶×20瓶/箱',img:null},
+  {id:'p002',name:'复合碘溶液(水产用)',cat:'disinfect',ing:'碘 1.8-2.0%、磷酸 16-18%',scene:'细菌、病毒性疾病',spec:'500g/瓶×20瓶/箱',img:null},
+  {id:'p003',name:'胜典',cat:'other',ing:'碘、磷酸',scene:'辅助消毒',spec:'1000g/瓶×15瓶/箱',img:null},
+  {id:'p004',name:'超典',cat:'other',ing:'碘、磷酸',scene:'辅助消毒',spec:'1000g/瓶×15瓶/箱',img:null},
+  {id:'p005',name:'聚维酮碘溶液',cat:'disinfect',ing:'聚维酮碘 10%',scene:'弧菌、嗜水气单胞菌',spec:'500g/瓶×20瓶/箱',img:null},
+  {id:'p006',name:'苯扎溴铵溶液',cat:'disinfect',ing:'苯扎溴铵 20%',scene:'出血、烂鳃、肠炎',spec:'500g/瓶×20瓶/箱',img:null},
+  {id:'p007',name:'戊二醛溶液',cat:'disinfect',ing:'戊二醛 20%',scene:'出血、烂鳃、肠炎',spec:'500g/瓶×20瓶/箱',img:null},
+  {id:'p008',name:'甲醛溶液',cat:'disinfect',ing:'甲醛',scene:'水体杀虫、杀菌',spec:'25kg/桶',img:null},
+  {id:'p009',name:'恩诺沙星粉',cat:'antibiotic',ing:'恩诺沙星 10%',scene:'出血性败血症、肠炎',spec:'100g/包×50包/箱',img:null},
+  {id:'p010',name:'硫酸新霉素粉',cat:'antibiotic',ing:'硫酸新霉素',scene:'肠道疾病、气单胞菌',spec:'200g/包×50包/箱',img:null},
+  {id:'p011',name:'亚硫酸氢钠甲萘醌粉',cat:'antibiotic',ing:'K3',scene:'鱼类出血、败血症',spec:'200g/包×50包/箱',img:null},
+  {id:'p012',name:'阿莫西林可溶性粉',cat:'antibiotic',ing:'阿莫西林',scene:'细菌性病、链球菌',spec:'100g/包×100包/箱',img:null},
+  {id:'p013',name:'超能多维',cat:'antistress',ing:'复合维生素、芽孢杆菌',scene:'转塘、高低温应激',spec:'1000g/包×10包/桶',img:'images/products/chaonengduowei.jpg'},
+  {id:'p014',name:'金维他',cat:'antistress',ing:'维生素、酶制剂、乳酸菌',scene:'日常抗应激',spec:'500g/包×20包/桶',img:'images/products/jinweita.jpg'},
+  {id:'p015',name:'肝泰乐',cat:'detox',ing:'胆汁酸 30%、牛磺酸 10%',scene:'保肝利胆、排毒',spec:'100g/包×30包/桶',img:'images/products/gantaile.jpg'},
+  {id:'p016',name:'矿源速补',cat:'nutrition',ing:'磷酸二氢钙、VD3、氨基酸',scene:'营养补充、促生长',spec:'1000g/包×10包/箱',img:'images/products/kuangyuansubu.jpg'},
+  {id:'p017',name:'多肽EM菌',cat:'water',ing:'EM菌复合菌种',scene:'肥水、调水、降亚盐',spec:'5kg/瓶×4瓶/箱',img:'images/products/duotaiem.png'},
+  {id:'p018',name:'爽水王',cat:'other',ing:'EM菌复合菌种',scene:'辅助调水',spec:'5kg/瓶×4瓶/箱',img:null},
+  {id:'p019',name:'解毒碧水爽',cat:'detox',ing:'有机酸',scene:'水体解毒、络合重金属',spec:'5kg×4瓶/箱',img:null},
+  {id:'p020',name:'解毒应激VC',cat:'antistress',ing:'抗坏血酸、牛磺酸',scene:'各类应激',spec:'500g/包×20包/桶',img:'images/products/jieduyingjiVC.jpg'},
+  {id:'p021',name:'高稳C',cat:'antistress',ing:'维生素C',scene:'抗应激、解毒',spec:'500g/包×20包/桶',img:'images/products/gaowenC.jpg'},
+  {id:'p022',name:'水蛛福星',cat:'nutrition',ing:'育蛛蛋白多肽、菌酶、氨基酸',scene:'营养补充',spec:'5kg/瓶×4瓶/箱',img:'images/products/shuizhufuxing.png'},
+  {id:'p023',name:'全能肥水膏',cat:'water',ing:'氨基酸、藻种、黄腐酸',scene:'肥水、培藻',spec:'10kg/桶',img:null},
+  {id:'p024',name:'全能肥蛛膏',cat:'water',ing:'氨基酸、藻种、黄腐酸',scene:'肥水、培蛛',spec:'10kg/桶',img:null},
+  {id:'p025',name:'粒粒高氧片',cat:'detox',ing:'过碳酸钠',scene:'快速增氧、氧化底质',spec:'1kg×10包/箱',img:null},
+  {id:'p026',name:'强力浊水清',cat:'detox',ing:'聚丙烯酰胺、聚合氯化铝',scene:'净水、抗应激',spec:'1000g/包×10包/箱',img:null},
+  {id:'p027',name:'解毒诱食净水王',cat:'detox',ing:'聚丙烯酰胺、聚合氯化铝',scene:'解毒、净水、诱食',spec:'1000g/包×10包/箱',img:null},
+  {id:'p028',name:'活水宝',cat:'water',ing:'碳源、氮源、促生长因子',scene:'促藻生长、净水',spec:'10kg/桶',img:null},
+  {id:'p029',name:'蓝裸甲藻净',cat:'water',ing:'杀藻剂',scene:'杀灭蓝藻、裸藻、甲藻',spec:'500g/瓶×20瓶/箱',img:'images/products/lanluojiazaojing.jpg'},
+  {id:'p030',name:'红菌亚硝净',cat:'water',ing:'亚硝酸盐转化菌',scene:'转化亚盐、分解残饵',spec:'500g/瓶×20瓶/箱',img:null},
+  {id:'p031',name:'超强底净',cat:'disinfect',ing:'底质改良剂',scene:'清除黑臭底',spec:'1000g×10包/桶',img:'images/products/chaoqiangdaigai.jpg'},
+  {id:'p032',name:'铁牛',cat:'disinfect',ing:'氧化剂',scene:'氧化氨氮、亚盐、H2S',spec:'1000g×10包/桶',img:null}
 ];
 
-// 通用占位 SVG
-const PLACEHOLDER_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="#E8EEF5" width="400" height="300"/><text x="200" y="155" text-anchor="middle" fill="#1B365D" font-family="sans-serif" font-size="22" font-weight="600">海泰达</text></svg>');
+const PH = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="#15203A" width="200" height="200"/><text x="100" y="105" text-anchor="middle" fill="#E9B44C" font-family="monospace" font-size="11" font-weight="700">HAITAIDA</text><text x="100" y="125" text-anchor="middle" fill="#5C6A8A" font-family="monospace" font-size="9">PRODUCT</text></svg>');
 
-// ===== Tab 切换 =====
-let currentCategory = 'all';
+let curCat = 'all';
 
-function switchPage(pageId) {
-  document.querySelectorAll('.tab').forEach(t => {
-    t.classList.toggle('active', t.dataset.page === pageId);
-  });
-  document.querySelectorAll('.page').forEach(p => {
-    p.classList.toggle('active', p.id === 'page-' + pageId);
-  });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function switchPage(id){
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.toggle('active', t.dataset.page===id));
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active', p.id==='page-'+id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav-tab').forEach(t=>t.addEventListener('click',()=>switchPage(t.dataset.page)));
+
+function prodCard(p){
+  const cat = CAT[p.cat];
+  return `<div class="prod-card" onclick="goCat('${p.cat}')">
+    <div class="prod-img"><img src="${p.img||PH}" alt="${p.name}" loading="lazy" onerror="this.src='${PH}'">
+    ${p.img?'<span class="badge">IMG</span>':''}</div>
+    <div class="prod-body">
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-cat">${cat.en} · ${p.id.toUpperCase()}</div>
+      <div class="prod-spec">📦 ${p.spec}</div>
+    </div>
+  </div>`;
 }
 
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => switchPage(tab.dataset.page));
-});
+function goCat(c){ curCat=c; switchPage('product'); renderProducts(); syncFilter(); }
 
-// ===== 渲染产品卡片 =====
-function renderProduct(p) {
-  const img = p.image || PLACEHOLDER_SVG;
-  const catName = CATEGORY_NAME[p.category] || p.category;
-  return `
-    <div class="product-card">
-      <img class="product-img" src="${img}" alt="${p.name}" loading="lazy"
-           onerror="this.src='${PLACEHOLDER_SVG}'">
-      <div class="product-body">
-        <div class="product-name">${p.name}</div>
-        <span class="product-tag">${catName}</span>
-        <div class="product-info"><strong>成分:</strong>${p.ingredient}</div>
-        <div class="product-info"><strong>用途:</strong>${p.scene}</div>
-        <div class="product-spec">📦 ${p.spec}</div>
-      </div>
+function renderHomeCats(){
+  const cats = Object.keys(CAT);
+  const html = cats.map(k=>{
+    const c = CAT[k];
+    const cnt = PRODUCTS.filter(p=>p.cat===k).length;
+    return `<div class="cat-card" onclick="goCat('${k}')">
+      <div class="cat-count">${String(cnt).padStart(2,'0')}</div>
+      <div class="cat-num">// ${c.en}</div>
+      <div class="cat-name">${c.name}</div>
+      <div class="cat-desc">${c.desc}</div>
+      <div class="cat-tags">${c.tags.map(t=>`<span class="cat-tag">${t}</span>`).join('')}</div>
     </div>`;
+  }).join('');
+  document.getElementById('home-cat-grid').innerHTML = html;
 }
 
-// ===== 产品页 =====
-function renderFilter() {
-  const bar = document.getElementById('filter-bar');
-  bar.innerHTML = CATEGORIES.map(c =>
-    `<button class="filter-btn ${c.id === currentCategory ? 'active' : ''}" data-cat="${c.id}">${c.name}</button>`
-  ).join('');
-  bar.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentCategory = btn.dataset.cat;
-      renderFilter();
-      renderProducts();
+function renderFeatured(){
+  document.getElementById('featured').innerHTML = PRODUCTS.filter(p=>p.img).slice(0,10).map(prodCard).join('');
+}
+
+function syncFilter(){
+  document.querySelectorAll('.filter-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.cat===curCat);
+    b.style.background = b.dataset.cat===curCat?'var(--accent)':'transparent';
+    b.style.color = b.dataset.cat===curCat?'#0B1220':'var(--text-2)';
+  });
+}
+
+function renderProducts(){
+  const list = curCat==='all' ? PRODUCTS : PRODUCTS.filter(p=>p.cat===curCat);
+  document.getElementById('product-grid').innerHTML = list.length ? list.map(prodCard).join('') : '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--text-3)">该分类暂无产品</div>';
+  document.getElementById('prod-count').textContent = list.length;
+  document.getElementById('prod-cat-name').textContent = curCat==='all'?'全部':CAT[curCat].name;
+}
+
+function renderSpecTable(){
+  const cats = Object.keys(CAT);
+  let html = '';
+  cats.forEach(k=>{
+    const items = PRODUCTS.filter(p=>p.cat===k);
+    if(!items.length) return;
+    items.forEach((p,i)=>{
+      html += `<tr>
+        <td class="num">${p.id.toUpperCase()}</td>
+        <td><strong>${p.name}</strong><div style="font-size:11px;color:var(--text-3);margin-top:2px">${p.scene}</div></td>
+        <td><span style="color:var(--accent)">${CAT[k].name}</span><div style="font-size:10px;color:var(--text-3);font-family:'JetBrains Mono',monospace;margin-top:2px">${CAT[k].en}</div></td>
+        <td style="font-size:11px;color:var(--text-2)">${p.ing}</td>
+        <td style="font-size:11px;color:var(--text-2);font-family:'JetBrains Mono',monospace">${p.spec}</td>
+      </tr>`;
     });
   });
+  document.getElementById('spec-table').innerHTML = html;
 }
 
-function renderProducts() {
-  const list = currentCategory === 'all'
-    ? PRODUCTS
-    : PRODUCTS.filter(p => p.category === currentCategory);
-  const grid = document.getElementById('product-grid');
-  if (!list.length) {
-    grid.innerHTML = '<div class="empty">该分类暂无产品</div>';
-    return;
-  }
-  grid.innerHTML = list.map(renderProduct).join('');
-}
+document.querySelectorAll('.filter-btn').forEach(b=>{
+  b.addEventListener('click',()=>{curCat=b.dataset.cat;syncFilter();renderProducts();});
+});
 
-// ===== 首页热门 =====
-function renderFeatured() {
-  // 优先选有图的产品做推荐
-  const featured = PRODUCTS.filter(p => p.image).slice(0, 8);
-  document.getElementById('featured-products').innerHTML = featured.map(renderProduct).join('');
-}
-
-// 初始化
-renderFilter();
-renderProducts();
+renderHomeCats();
 renderFeatured();
+renderProducts();
+renderSpecTable();
+syncFilter();
 </script>
-
 </body>
 </html>
