@@ -201,35 +201,63 @@ html,body{font-size:15px}
   <div class="nav-in">
     <button class="active" data-page="home">网站首页</button>
     <button data-page="product">产品中心</button>
-    <button data-page="about">企业资质</button>
     <span class="nav-spacer"></span>
   </div>
 </nav>
 
 <div class="container">
 
-<!-- 首页 -->
+<!-- 首页(企业资质) -->
 <div class="page active" id="page-home">
 
   <section class="sec">
     <div class="sec-title">
-      <span>产品分类</span>
-      <a class="more" onclick="switchPage('product')">查看全部产品 →</a>
+      <span>企业资质</span>
+      <span style="font-size:12px;color:#8A95AD;font-weight:400">营业执照 / 兽药经营许可证齐备</span>
     </div>
-    <div class="cat-list" id="home-cat-list"></div>
-  </section>
 
-  <section class="sec">
-    <div class="sec-title">
-      <span>常用产品推荐</span>
-      <a class="more" onclick="switchPage('product')">更多产品 →</a>
+    <div class="about-grid">
+      <div>
+        <div class="about-block">
+          <h3>公司简介</h3>
+          <p>广东海泰达水产有限公司位于广东省,主要从事水产养殖投入品的批发与零售业务,产品主要应用于南美白对虾的池塘养殖场景。</p>
+          <p>公司所售产品涵盖<strong>消毒、调水、解毒、抗应激、营养、底改、抗菌</strong>等类别,与多家具备兽药生产资质的企业保持长期合作关系。</p>
+          <p>经营方面,公司持有<strong>兽药经营许可证</strong>与营业执照,各项资质完备,接受下游养殖户与经销商的合规查询。</p>
+        </div>
+
+        <div class="about-block">
+          <h3>经营信息</h3>
+          <table class="kv-table">
+            <tr><td>公司全称</td><td>广东海泰达水产有限公司</td></tr>
+            <tr><td>主营品类</td><td>兽药 / 水产投入品</td></tr>
+            <tr><td>主营品种</td><td>南美白对虾</td></tr>
+            <tr><td>SKU 总数</td><td>32 个</td></tr>
+            <tr><td>产品分类</td><td>7 大类</td></tr>
+            <tr><td>供货区域</td><td>广东 / 广西 / 福建 / 江苏 / 浙江</td></tr>
+            <tr><td>开票能力</td><td>增值税专用发票 / 普通发票</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <div class="license-block">
+          <h3 style="font-size:16px;font-weight:600;color:#1B365D;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #DDE3EC;text-align:left">兽药经营许可证</h3>
+          <img src="images/license/license.png" alt="兽药经营许可证">
+          <div class="lic-caption">兽药经营许可证 · 资质齐备</div>
+        </div>
+
+        <div class="about-block" style="margin-top:24px">
+          <h3>经营节点</h3>
+          <ul class="timeline">
+            <li><span class="y">2026 年</span><span class="t">完善线上产品资料,32 个 SKU 分类上架</span></li>
+            <li><span class="y">2024 年</span><span class="t">拓展福建、江苏等华东对虾主养区客户</span></li>
+            <li><span class="y">2022 年</span><span class="t">取得兽药经营许可证,合规开展兽药经营</span></li>
+            <li><span class="y">2020 年</span><span class="t">公司成立,聚焦对虾养殖投入品供应</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="prod-grid" id="featured"></div>
   </section>
-
-  <div class="partner-row">
-    <strong>合作提示:</strong>本公司仅面向养殖终端及区域经销商销售,非个人零售。如需样品试用或区域报价,请通过电话或微信联系。
-  </div>
 
 </div>
 
@@ -241,6 +269,8 @@ html,body{font-size:15px}
       <span>产品中心</span>
       <span id="prod-stat" style="font-size:12px;color:#8A95AD;font-weight:400"></span>
     </div>
+
+    <div class="cat-list" id="home-cat-list" style="margin-bottom:24px"></div>
 
     <div class="filter-row">
       <span class="label">按分类筛选:</span>
@@ -281,36 +311,7 @@ html,body{font-size:15px}
 </div>
 
 <!-- 关于页 -->
-<div class="page" id="page-about">
 
-  <section class="sec">
-    <div class="sec-title">
-      <span>企业资质</span>
-      <span style="font-size:12px;color:#8A95AD;font-weight:400">营业执照 / 兽药经营许可证齐备</span>
-    </div>
-
-    <div class="about-grid">
-      <div>
-        <div class="about-block">
-          <h3>公司简介</h3>
-          <p>广东海泰达水产有限公司位于广东省,主要从事水产养殖投入品的批发与零售业务,产品主要应用于南美白对虾的池塘养殖场景。</p>
-          <p>公司所售产品涵盖<strong>消毒、调水、解毒、抗应激、营养、底改、抗菌</strong>等类别,与多家具备兽药生产资质的企业保持长期合作关系。</p>
-          <p>经营方面,公司持有<strong>兽药经营许可证</strong>与营业执照,各项资质完备,接受下游养殖户与经销商的合规查询。</p>
-        </div>
-
-        <div class="about-block">
-          <h3>经营信息</h3>
-          <table class="kv-table">
-            <tr><td>公司全称</td><td>广东海泰达水产有限公司</td></tr>
-            <tr><td>主营品类</td><td>兽药 / 水产投入品</td></tr>
-            <tr><td>主营品种</td><td>南美白对虾</td></tr>
-            <tr><td>SKU 总数</td><td>32 个</td></tr>
-            <tr><td>产品分类</td><td>7 大类</td></tr>
-            <tr><td>供货区域</td><td>广东 / 广西 / 福建 / 江苏 / 浙江</td></tr>
-                        <tr><td>开票能力</td><td>增值税专用发票 / 普通发票</td></tr>
-          </table>
-        </div>
-      </div>
 
       <div>
         <div class="license-block">
@@ -359,9 +360,7 @@ html,body{font-size:15px}
     </div>
     <div>
       <h4>关于</h4>
-      <a onclick="switchPage('about')">公司简介</a>
-      <a onclick="switchPage('about')">经营资质</a>
-        <a href="https://github.com/engeral/Guangdong-haitaida">GitHub 源码</a>
+      <a href="https://github.com/engeral/Guangdong-haitaida">GitHub 源码</a>
     </div>
   </div>
   <div class="copyright">
