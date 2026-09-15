@@ -110,17 +110,62 @@ table{border-collapse:collapse;width:100%}
 .footer a{display:block;font-size:12px;color:#5A6886;padding:4px 0}
 .footer a:hover{color:#fff}
 .copyright{background:#0A1A33;padding:12px 20px;text-align:center;font-size:12px;color:#5A6886;border-top:1px solid rgba(255,255,255,0.1)}
+/* === 响应式:平板 768px === */
 @media(max-width:960px){
 .cat-list,.prod-grid,.about-grid{grid-template-columns:1fr 1fr}
 .intro-bar{grid-template-columns:1fr}
 .intro-right{border-left:none;border-top:1px solid #DDE3EC;padding-left:0;padding-top:16px}
 .footer-in{grid-template-columns:1fr 1fr}
+.intro-left h2{font-size:26px}
 }
-@media(max-width:560px){
-.cat-list,.prod-grid,.about-grid{grid-template-columns:1fr}
-.header-tel{display:none}
-.nav button{padding:0 14px;font-size:13px}
-.intro-left h2{font-size:22px}
+
+/* === 响应式:手机 560px === */
+@media(max-width:768px){
+html,body{font-size:15px}
+.container{padding:16px 14px}
+.topbar{display:none}
+.header-in{padding:14px}
+.logo img{width:36px;height:48px}
+.logo-text h1{font-size:16px;letter-spacing:0}
+.logo-text p{font-size:10px;letter-spacing:0}
+.header-tel .num{font-size:17px}
+.nav-in{padding:0 6px;overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
+.nav button{padding:0 12px;height:42px;font-size:13px;white-space:nowrap;flex-shrink:0}
+.nav-spacer{display:none}
+.intro-bar{padding-bottom:20px;margin-bottom:20px}
+.intro-left h2{font-size:20px;line-height:1.4}
+.intro-left .lead{font-size:14px;line-height:1.8}
+.sec{margin-bottom:28px}
+.sec-title{font-size:16px;padding-bottom:8px;margin-bottom:14px}
+.sec-title .more{font-size:11px}
+.cat-list,.prod-grid,.about-grid{grid-template-columns:1fr 1fr;gap:12px}
+.cat-item{padding:14px;gap:12px}
+.cat-item .num{font-size:24px;width:36px}
+.cat-item .info h4{font-size:15px}
+.cat-item .info p{font-size:12px}
+.prod-body{padding:10px 12px}
+.prod-name{font-size:13px}
+.prod-cat{font-size:10px}
+.prod-spec{font-size:11px}
+.filter-row{padding:10px 12px;gap:5px}
+.filter-row .label{font-size:11px;margin-right:4px;width:100%;margin-bottom:4px}
+.filter-btn{padding:6px 12px;font-size:12px}
+.about-block{padding:18px}
+.about-block h3{font-size:15px}
+.about-block p{font-size:13px}
+.spec-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.spec-wrap table{min-width:560px;font-size:12px}
+.spec-wrap th,.spec-wrap td{padding:10px 8px}
+.footer-in{grid-template-columns:1fr 1fr;padding:24px 14px;gap:20px}
+.copyright{padding:12px 14px;font-size:11px}
+}
+
+/* === 响应式:小屏 380px === */
+@media(max-width:380px){
+.cat-list,.prod-grid{grid-template-columns:1fr}
+.intro-left h2{font-size:18px}
+.header-in{gap:8px}
+.logo-text h1{font-size:14px}
 }
 </style>
 </head>
@@ -130,7 +175,7 @@ table{border-collapse:collapse;width:100%}
 <div class="topbar">
   <div class="topbar-in">
     <span>广东海泰达水产有限公司 · 自营批发</span>
-    <span><a href="#">小程序</a><a href="preview.html">手机预览</a></span>
+    <span>专注对虾养殖投入品供应</span>
   </div>
 </div>
 
