@@ -1,0 +1,48 @@
+<view class="page">
+
+  <view class="header">
+    <image class="logo" src="/images/icons/logo.png" mode="heightFix"></image>
+    <view>
+      <view class="title">广东海泰达</view>
+      <view class="subtitle">生物科技有限公司</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">产品分类</view>
+    <view class="cat-grid">
+      <view class="cat-item"
+            wx:for="{{categories}}"
+            wx:key="id"
+            data-id="{{item.id}}"
+            bindtap="goCategory">
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <view class="section">
+    <view class="section-title-row">
+      <view class="section-title">推荐产品</view>
+      <view class="more" bindtap="goProductTab">查看全部 ›</view>
+    </view>
+
+    <view class="product-list">
+      <view class="product-item"
+            wx:for="{{featured}}"
+            wx:key="id"
+            data-id="{{item.id}}"
+            bindtap="goDetail">
+        <view class="product-img">
+          <image src="{{item.image}}" mode="aspectFill"></image>
+        </view>
+        <view class="product-name">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">广东海泰达 · 水产养殖全周期方案</view>
+
+</view>

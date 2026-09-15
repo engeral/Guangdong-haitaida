@@ -1,0 +1,87 @@
+<view class="page">
+
+  <!-- 头部 -->
+  <view class="header">
+    <image class="logo" src="/images/icons/logo.png" mode="heightFix"></image>
+    <view>
+      <view class="title">广东海泰达生物科技有限公司</view>
+      <view class="subtitle">Guangdong Haitaida Biotechnology Co., Ltd.</view>
+    </view>
+  </view>
+
+  <!-- 企业简介 -->
+  <view class="section">
+    <view class="section-title">企业简介</view>
+    <view class="section-body">
+      广东海泰达生物科技有限公司专注于水产养殖产品的研发、生产与销售，产品涵盖消毒、调水、抗应激、营养、治病等全场景，致力于为养殖户提供专业的产品与技术支持。
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 企业资质 -->
+  <view class="section">
+    <view class="section-title">企业资质</view>
+
+    <view class="qual-list">
+      <view class="qual-item">
+        <view class="qual-dot"></view>
+        <view class="qual-text">合规生产，品质保障</view>
+      </view>
+      <view class="qual-item">
+        <view class="qual-dot"></view>
+        <view class="qual-text">32 款产品，覆盖 7 大分类</view>
+      </view>
+      <view class="qual-item">
+        <view class="qual-dot"></view>
+        <view class="qual-text">4 大场景方案，全程技术支持</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 许可证图片 -->
+  <view class="license-block">
+    <view class="license-title">饲料生产许可证</view>
+    <view class="license-sub">点击图片可放大查看</view>
+    <image class="license-img"
+           src="/images/license/license.png"
+           mode="widthFix"
+           data-url="/images/license/license.png"
+           bindtap="previewImage"></image>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 产品范围 -->
+  <view class="section">
+    <view class="section-title">产品范围</view>
+    <view class="range-grid">
+      <view class="range-item">水体消毒类</view>
+      <view class="range-item">水质调控类</view>
+      <view class="range-item">营养抗应激类</view>
+      <view class="range-item">解毒调水类</view>
+      <view class="range-item">抗菌治病类</view>
+      <view class="range-item">营养促生长类</view>
+      <view class="range-item">其他类</view>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 联系方式 -->
+  <view class="section">
+    <view class="section-title">联系方式</view>
+
+    <view class="contact-item" data-phone="18924850229" bindtap="callPhone">
+      <view class="contact-label">咨询电话</view>
+      <view class="contact-value">189-2485-0229</view>
+    </view>
+    <view class="contact-item" data-text="广东省江门市鹤山市桃源镇龙蹯岭交通石场内西北角13号地1号厂房" bindtap="copyText">
+      <view class="contact-label">公司地址</view>
+      <view class="contact-value">广东省江门市鹤山市桃源镇龙蹯岭交通石场内西北角13号地1号厂房</view>
+    </view>
+  </view>
+
+  <view class="footer">广东海泰达生物科技有限公司 · 水产养殖全周期方案</view>
+
+</view>

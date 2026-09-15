@@ -1,0 +1,27 @@
+<view class="page" wx:if="{{product}}">
+
+  <view class="hero">
+    <image wx:if="{{product.image}}" src="{{product.image}}" mode="aspectFit"></image>
+    <view wx:else class="hero-fallback">{{product.name}}</view>
+  </view>
+
+  <view class="content">
+    <view class="name">{{product.name}}</view>
+
+    <view class="row">
+      <view class="row-label">主要成分</view>
+      <view class="row-value">{{product.ingredient}}</view>
+    </view>
+
+    <view class="row">
+      <view class="row-label">适用场景</view>
+      <view class="row-value">{{product.scene}}</view>
+    </view>
+
+    <view class="row">
+      <view class="row-label">包装规格</view>
+      <view class="row-value">{{product.spec}}</view>
+    </view>
+  </view>
+
+</view>

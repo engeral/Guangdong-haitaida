@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/product/product",
+    "pages/about/about",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "广东海泰达",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#8C919B",
+    "selectedColor": "#0F4C81",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home_active.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "产品",
+        "iconPath": "images/icons/product.png",
+        "selectedIconPath": "images/icons/product_active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "企业资质",
+        "iconPath": "images/icons/about.png",
+        "selectedIconPath": "images/icons/about_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

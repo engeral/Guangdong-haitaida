@@ -1,0 +1,51 @@
+<view class="page">
+
+  <!-- 顶部品牌头 -->
+  <view class="header">
+    <image class="logo" src="/images/icons/logo.png" mode="heightFix"></image>
+    <view>
+      <view class="title">广东海泰达</view>
+      <view class="subtitle">生物科技有限公司 · 产品分类</view>
+    </view>
+  </view>
+
+  <!-- 大分类网格 -->
+  <view class="cat-grid">
+    <view class="cat-card {{current === item.id ? 'active' : ''}}"
+          wx:for="{{categories}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="onCategory">
+      <view class="cat-icon">{{catIcons[item.name] || ''}}</view>
+      <view class="cat-name">{{item.name}}</view>
+    </view>
+  </view>
+
+  <!-- 当前分类下的产品 -->
+  <view class="list-header" wx:if="{{current}}">
+    <view class="list-title">产品列表</view>
+    <view class="list-count">共 {{list.length}} 款</view>
+  </view>
+
+  <view class="list">
+    <view class="item"
+          wx:for="{{list}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="goDetail">
+      <view class="item-img">
+        <image wx:if="{{item.image}}" src="{{item.image}}" mode="aspectFill"></image>
+        <view wx:else class="img-fallback">{{item.name}}</view>
+      </view>
+      <view class="item-body">
+        <view class="item-name">{{item.name}}</view>
+        <view class="item-meta">{{item.ingredient}}</view>
+        <view class="item-scene">{{item.scene}}</view>
+        <view class="item-spec">{{item.spec}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{list.length === 0}}" class="empty">暂无产品</view>
+
+</view>

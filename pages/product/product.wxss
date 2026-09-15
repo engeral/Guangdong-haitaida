@@ -1,0 +1,161 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 60rpx;
+  background: #FFFFFF;
+}
+
+.header {
+  padding: 48rpx 32rpx 32rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #F1F5F9;
+}
+
+.logo {
+  width: 56rpx;
+  height: 72rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1F2933;
+  letter-spacing: 1rpx;
+}
+
+.subtitle {
+  font-size: 22rpx;
+  color: #9CA3AF;
+  margin-top: 4rpx;
+}
+
+/* 分类大网格 - 3 列 */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16rpx;
+  padding: 32rpx;
+}
+
+.cat-card {
+  background: #FAFAFA;
+  border: 1rpx solid #E5E7EB;
+  padding: 28rpx 12rpx;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.cat-card.active {
+  background: #1F2933;
+  border-color: #1F2933;
+}
+
+.cat-card.active .cat-name {
+  color: #FFFFFF;
+}
+
+.cat-icon {
+  font-size: 36rpx;
+  line-height: 1;
+  margin-bottom: 10rpx;
+}
+
+.cat-name {
+  font-size: 24rpx;
+  color: #1F2933;
+  font-weight: 500;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 32rpx 16rpx;
+  border-top: 1rpx solid #F1F5F9;
+}
+
+.list-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1F2933;
+  padding-left: 16rpx;
+  border-left: 6rpx solid #1F2933;
+}
+
+.list-count {
+  font-size: 24rpx;
+  color: #9CA3AF;
+}
+
+.list {
+  padding: 0 32rpx;
+}
+
+.item {
+  display: flex;
+  padding: 32rpx 0;
+  border-bottom: 1rpx solid #F1F5F9;
+}
+
+.item-img {
+  width: 160rpx;
+  height: 160rpx;
+  flex-shrink: 0;
+  background: #F8FAFC;
+  border: 1rpx solid #F1F5F9;
+  overflow: hidden;
+}
+
+.item-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.img-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12rpx;
+  font-size: 22rpx;
+  color: #9CA3AF;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.item-body {
+  flex: 1;
+  margin-left: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #1F2933;
+  margin-bottom: 8rpx;
+}
+
+.item-meta, .item-scene {
+  font-size: 24rpx;
+  color: #6B7280;
+  margin-bottom: 6rpx;
+  line-height: 1.5;
+}
+
+.item-spec {
+  font-size: 22rpx;
+  color: #9CA3AF;
+}
+
+.empty {
+  text-align: center;
+  color: #9CA3AF;
+  font-size: 26rpx;
+  padding: 80rpx 0;
+}

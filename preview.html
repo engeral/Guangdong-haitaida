@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>广东海泰达 - 小程序预览</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #FAFAFA;
+  color: #1F2933;
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.frame {
+  width: 390px;
+  background: #FFFFFF;
+  border: 1rpx solid #E5E7EB;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 800px;
+}
+
+.label {
+  text-align: center;
+  font-size: 12px;
+  color: #6B7280;
+  padding: 8px;
+  background: #F1F5F9;
+}
+
+.navbar {
+  background: #FFFFFF;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #1F2933;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 1rpx solid #F1F5F9;
+}
+
+.header {
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #F1F5F9;
+}
+
+.logo {
+  width: 28px;
+  height: 44px;
+  margin-right: 12px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1F2933;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #9CA3AF;
+  margin-top: 2px;
+}
+
+.section {
+  padding: 20px 16px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1F2933;
+  padding-left: 8px;
+  border-left: 3px solid #1F2933;
+}
+
+.section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-title-row .section-title {
+  border-left: none;
+  padding-left: 0;
+}
+
+.more {
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.cat-item {
+  background: #FAFAFA;
+  border: 1rpx solid #E5E7EB;
+  padding: 12px 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #1F2933;
+}
+
+.divider {
+  height: 1rpx;
+  background: #F1F5F9;
+  margin: 0 16px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.product-item {
+  background: #FAFAFA;
+}
+
+.product-img {
+  width: 100%;
+  height: 100px;
+  background: #F8FAFC;
+  border: 1rpx solid #F1F5F9;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-name {
+  font-size: 11px;
+  color: #1F2933;
+  padding: 6px 4px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  background: #FFFFFF;
+  padding: 10px 0;
+  border-bottom: 1rpx solid #F1F5F9;
+  white-space: nowrap;
+}
+
+.tab {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0 4px;
+}
+
+.tab.active {
+  color: #1F2933;
+  font-weight: 600;
+  border-bottom: 2px solid #1F2933;
+}
+
+.cat-card {
+  background: #FAFAFA;
+  border: 1rpx solid #E5E7EB;
+  padding: 14px 6px;
+  text-align: center;
+}
+
+.cat-card.active {
+  background: #1F2933;
+  border-color: #1F2933;
+}
+
+.cat-card.active .cat-name {
+  color: #FFFFFF;
+}
+
+.cat-icon {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.cat-name {
+  font-size: 12px;
+  color: #1F2933;
+  font-weight: 500;
+}
+
+.list {
+  padding: 0 16px;
+}
+
+.item {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1rpx solid #F1F5F9;
+}
+
+.item-img {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  background: #F8FAFC;
+  border: 1rpx solid #F1F5F9;
+  overflow: hidden;
+}
+
+.item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  font-size: 11px;
+  color: #9CA3AF;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.item-body {
+  flex: 1;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1F2933;
+  margin-bottom: 4px;
+}
+
+.item-meta, .item-scene {
+  font-size: 12px;
+  color: #6B7280;
+  margin-bottom: 3px;
+}
+
+.item-spec {
+  font-size: 11px;
+  color: #9CA3AF;
+}
+
+.license-card {
+  background: #FAFAFA;
+  border: 1rpx solid #E5E7EB;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.license-badge {
+  background: #1F2933;
+  color: #FFFFFF;
+  font-size: 11px;
+  padding: 3px 8px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.license-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1F2933;
+}
+
+.license-no {
+  font-size: 12px;
+  color: #6B7280;
+  margin-top: 2px;
+}
+
+.qual-list, .qual-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.qual-item {
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.qual-dot {
+  width: 4px;
+  height: 4px;
+  background: #1F2933;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.qual-text {
+  font-size: 13px;
+  color: #4B5563;
+}
+
+.range-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.range-item {
+  background: #FAFAFA;
+  border: 1rpx solid #E5E7EB;
+  padding: 7px 12px;
+  font-size: 13px;
+  color: #1F2933;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1rpx solid #F1F5F9;
+}
+
+.contact-label { font-size: 13px; color: #9CA3AF; }
+.contact-value { font-size: 14px; color: #1F2933; font-weight: 500; }
+
+.tabbar {
+  margin-top: auto;
+  background: #FFFFFF;
+  display: flex;
+  border-top: 1rpx solid #E5E7EB;
+  padding: 6px 0;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  color: #8C919B;
+  padding: 4px;
+}
+
+.tab-item.active {
+  color: #0F4C81;
+}
+
+.tab-icon {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.footer {
+  text-align: center;
+  color: #9CA3AF;
+  font-size: 11px;
+  padding: 24px 0;
+}
+</style>
+</head>
+<body>
+
+<!-- 首页 -->
+<div class="frame">
+  <div class="label">首页</div>
+  <div class="navbar">广东海泰达</div>
+  <div class="header">
+    <img class="logo" src="images/icons/logo.png">
+    <div>
+      <div class="title">广东海泰达</div>
+      <div class="subtitle">生物科技有限公司</div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">产品分类</div>
+    <div class="cat-grid">
+      <div class="cat-item">水体消毒类</div>
+      <div class="cat-item">水质调控类</div>
+      <div class="cat-item">抗应激类</div>
+      <div class="cat-item">解毒调水类</div>
+      <div class="cat-item">抗菌治病类</div>
+      <div class="cat-item">营养促生长类</div>
+      <div class="cat-item">其他类</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-title">推荐产品</div>
+      <div class="more">查看全部 ›</div>
+    </div>
+    <div class="product-list">
+      <div class="product-item"><div class="product-img"><img src="images/products/chaonengduowei.jpg"></div><div class="product-name">超能多维</div></div>
+      <div class="product-item"><div class="product-img"><img src="images/products/jinweita.jpg"></div><div class="product-name">金维他</div></div>
+      <div class="product-item"><div class="product-img"><img src="images/products/gantaile.jpg"></div><div class="product-name">肝泰乐</div></div>
+      <div class="product-item"><div class="product-img"><img src="images/products/kuangyuansubu.jpg"></div><div class="product-name">矿源速补</div></div>
+      <div class="product-item"><div class="product-img"><img src="images/products/duotaiem.png"></div><div class="product-name">多肽EM菌</div></div>
+      <div class="product-item"><div class="product-img"><img src="images/products/shuizhufuxing.png"></div><div class="product-name">水蛛福星</div></div>
+    </div>
+  </div>
+  <div class="footer">广东海泰达 · 水产养殖全周期方案</div>
+  <div class="tabbar">
+    <div class="tab-item active"><span class="tab-icon">⌂</span>首页</div>
+    <div class="tab-item"><span class="tab-icon">▦</span>产品</div>
+    <div class="tab-item"><span class="tab-icon">ⓘ</span>企业资质</div>
+  </div>
+</div>
+
+<!-- 产品页 -->
+<div class="frame">
+  <div class="label">产品</div>
+  <div class="navbar">广东海泰达水产</div>
+  <div class="header">
+    <img class="logo" src="images/icons/logo.png">
+    <div>
+      <div class="title">广东海泰达</div>
+      <div class="subtitle">生物科技有限公司 · 产品分类</div>
+    </div>
+  </div>
+  <div class="tabs" style="display:none"></div>
+  <div class="cat-grid" style="padding:16px;">
+    <div class="cat-card active">
+      <div class="cat-icon">🧪</div>
+      <div class="cat-name">水体消毒</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">💧</div>
+      <div class="cat-name">水质调控</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">⚡</div>
+      <div class="cat-name">抗应激</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🌿</div>
+      <div class="cat-name">解毒调水</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">💊</div>
+      <div class="cat-name">抗菌治病</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🌾</div>
+      <div class="cat-name">营养促生长</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">📦</div>
+      <div class="cat-name">其他</div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;padding:0 16px 8px;border-top:1rpx solid #F1F5F9;">
+    <div style="font-size:15px;font-weight:600;color:#1F2933;padding-left:8px;border-left:3px solid #1F2933;">产品列表</div>
+    <div style="font-size:12px;color:#9CA3AF;">共 4 款</div>
+  </div>
+  <div class="list">
+    <div class="item">
+      <div class="item-img"><img src="images/products/chaoqiangdaigai.jpg"></div>
+      <div class="item-body">
+        <div class="item-name">超强底净</div>
+        <div class="item-meta">底质改良剂</div>
+        <div class="item-scene">清除黑臭底、改善底质</div>
+        <div class="item-spec">1000g × 10包/桶</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-img"><div class="item-fallback">蛋氨酸碘溶液</div></div>
+      <div class="item-body">
+        <div class="item-name">蛋氨酸碘溶液</div>
+        <div class="item-meta">蛋氨酸碘 4.5-6.0%</div>
+        <div class="item-scene">水体消毒、疫病期消毒、清塘消毒</div>
+        <div class="item-spec">500g/瓶 × 20瓶/箱</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-img"><div class="item-fallback">复合碘溶液</div></div>
+      <div class="item-body">
+        <div class="item-name">复合碘溶液（水产用）</div>
+        <div class="item-meta">碘 1.8-2.0%、磷酸 16-18%</div>
+        <div class="item-scene">细菌性、病毒性疾病防治</div>
+        <div class="item-spec">500g/瓶 × 20瓶/箱</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-img"><div class="item-fallback">聚维酮碘</div></div>
+      <div class="item-body">
+        <div class="item-name">聚维酮碘溶液（水产用）</div>
+        <div class="item-meta">聚维酮碘 10%</div>
+        <div class="item-scene">弧菌、嗜水气单胞菌等细菌病</div>
+        <div class="item-spec">500g/瓶 × 20瓶/箱</div>
+      </div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab-item"><span class="tab-icon">⌂</span>首页</div>
+    <div class="tab-item active"><span class="tab-icon">▦</span>产品</div>
+    <div class="tab-item"><span class="tab-icon">ⓘ</span>企业资质</div>
+  </div>
+</div>
+
+<!-- 企业资质 -->
+<div class="frame">
+  <div class="label">企业资质</div>
+  <div class="navbar">广东海泰达</div>
+  <div class="header">
+    <img class="logo" src="images/icons/logo.png">
+    <div>
+      <div class="title">广东海泰达生物科技有限公司</div>
+      <div class="subtitle">Guangdong Haitaida Biotechnology Co., Ltd.</div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-title">企业简介</div>
+    <div style="font-size:14px; color:#4B5563; line-height:1.8; margin-top:12px;">
+      广东海泰达专注于水产养殖产品的研发、生产与销售，产品涵盖消毒、调水、抗应激、营养、治病等全场景。
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <div class="section-title">企业资质</div>
+    <div class="license-card">
+      <div class="license-badge">许可证</div>
+      <div>
+        <div class="license-name">饲料生产许可证</div>
+        <div class="license-no">编号：粤饲证字〔待补充〕</div>
+      </div>
+    </div>
+    <div class="qual-list">
+      <div class="qual-item"><div class="qual-dot"></div><div class="qual-text">合规生产，品质保障</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div class="qual-text">32 款产品，覆盖 7 大分类</div></div>
+      <div class="qual-item"><div class="qual-dot"></div><div class="qual-text">4 大场景方案，全程技术支持</div></div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <div class="section-title">产品范围</div>
+    <div class="range-grid" style="margin-top:12px;">
+      <div class="range-item">水体消毒类</div>
+      <div class="range-item">水质调控类</div>
+      <div class="range-item">营养抗应激类</div>
+      <div class="range-item">解毒调水类</div>
+      <div class="range-item">抗菌治病类</div>
+      <div class="range-item">营养促生长类</div>
+      <div class="range-item">其他类</div>
+    </div>
+  </div>
+
+  <div style="padding:0 16px 20px;">
+    <div class="section-title">饲料生产许可证</div>
+    <div style="font-size:11px; color:#9CA3AF; margin: 6px 0 10px;">点击图片可放大查看</div>
+    <img src="images/license/license.png" style="width:100%; border:1px solid #E5E7EB; background:#F8FAFC;">
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <div class="section-title">联系方式</div>
+    <div class="contact-item">
+      <div class="contact-label">咨询电话</div>
+      <div class="contact-value">189-2485-0229</div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-label">公司地址</div>
+      <div class="contact-value" style="font-size:12px; text-align:right; line-height:1.5; flex:1; margin-left:12px;">广东省江门市鹤山市桃源镇龙蹯岭交通石场内西北角13号地1号厂房</div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab-item"><span class="tab-icon">⌂</span>首页</div>
+    <div class="tab-item"><span class="tab-icon">▦</span>产品</div>
+    <div class="tab-item active"><span class="tab-icon">ⓘ</span>企业资质</div>
+  </div>
+</div>
+
+</body>
+</html>
