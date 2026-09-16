@@ -1,8 +1,15 @@
 <view class="page" wx:if="{{product}}">
 
-  <view class="hero">
-    <image wx:if="{{product.image}}" src="{{product.image}}" mode="aspectFit"></image>
-    <view wx:else class="hero-fallback">{{product.name}}</view>
+  <!-- 图集:有 image(images 数组或单 image)就轮播,都没有就显示占位 -->
+  <swiper class="hero" wx:if="{{hasImage}}" indicator-dots="{{heroDots}}" autoplay="{{false}}" circular="{{false}}" bindchange="onSwiperChange">
+    <block wx:for="{{product.images || [product.image]}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" mode="aspectFit" bindtap="onTapImage" data-url="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="hero hero-fallback" wx:else>
+    <text>{{product.name}}</text>
   </view>
 
   <view class="content">
@@ -22,6 +29,11 @@
       <view class="row-label">包装规格</view>
       <view class="row-value">{{product.spec}}</view>
     </view>
+  </view>
+
+  <!-- 全屏图片预览 -->
+  <view class="viewer-mask" wx:if="{{viewerUrl}}" bindtap="closeViewer">
+    <image src="{{viewerUrl}}" mode="aspectFit" show-menu-by-longpress="true"></image>
   </view>
 
 </view>
